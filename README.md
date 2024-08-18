@@ -72,7 +72,7 @@ git clone https://github.com/dashBlip/zNWatch.git
 3. **Run the Application**: Execute the following command to run the application:
 
    ```bash
-   java -cp bin com.yourpackage.MainClass
+   java -cp bin StockManagementSystem.Runner
    ```
 
    Replace `com.yourpackage.MainClass` with the fully qualified name of your main class. 🎬
