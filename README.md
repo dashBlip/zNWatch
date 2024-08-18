@@ -18,7 +18,8 @@ To get started with zNWatch, follow these instructions:
 - **Java JDK 11 or later**: Ensure you have the Java Development Kit (JDK) installed. You can download it from the [Oracle website](https://www.oracle.com/java/technologies/javase-downloads.html) or use [OpenJDK](https://openjdk.java.net/).
 - **Database**: Set up a database (e.g., MySQL, PostgreSQL) and configure it for JDBC integration.
 
-![image](https://github.com/user-attachments/assets/4482f2d6-ba3e-4dd4-b9d9-6d450135a3fe)
+![Screenshot 2024-08-18 at 13-10-38 localhost _ localhost _ StockManagement phpMyAdmin 5 2 1](https://github.com/user-attachments/assets/d9a21028-c77a-4d62-9b8d-7e1be6dc4c25)
+
 
 ### Cloning the Repository
 
