@@ -1,10 +1,8 @@
 package StockManagementSystem;
 
-import java.io.IOException;
-import java.sql.SQLException;
 
 public class Runner extends Pages{
-    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException, InterruptedException {
+    public static void main(String[] args) {
         try{
             StockLoader();
             InitialPages.JDBCConnectionCode();

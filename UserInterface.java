@@ -6,7 +6,7 @@ public interface UserInterface {
     String TEXT_BLUE = "\u001B[34m";
     String TEXT_GREEN = "\u001B[32m";
     String TEXT_RED = "\u001B[31m";
-    String TEXT_MAGNETA = "\u001B[35m";
+    String FONT = "\u001B[1;3m";
 
     void printMsgWithProgressBar(String sMsg);
 
@@ -19,22 +19,23 @@ class UI implements UserInterface{
         public static void printTable(String[] headers, Object[][] data, int columnWidth) {
             int numberOfColumns = headers.length;
 
-            // Print header
             printSeparator(numberOfColumns, columnWidth);
             printHeader(headers, columnWidth);
             printSeparator(numberOfColumns, columnWidth);
 
-            // Print data rows
             for (Object[] row : data) {
                 printDataRow(row, columnWidth);
-                printSeparator(numberOfColumns, columnWidth); // Line between records
+                printSeparator(numberOfColumns, columnWidth);
             }
         }
 
         private static void printHeader(String[] headers, int columnWidth) {
             System.out.print("|");
             for (String header : headers) {
+                System.out.print(UI.TEXT_RED);
+                System.out.print(UI.FONT);
                 System.out.printf("%-" + (columnWidth - 1) + "s", header);
+                System.out.print(UI.TEXT_RESET);
                 System.out.print("|");
             }
             System.out.println();
@@ -53,12 +54,21 @@ class UI implements UserInterface{
 
         private static void printDataRow(Object[] row, int columnWidth) {
             System.out.print("|");
+            boolean counter = true;
             for (Object cell : row) {
                 if(cell == null){
                     cell = "-";
                 }
-                System.out.printf("%-" + (columnWidth - 1) + "s", cell.toString());
+                if (counter){
+                    System.out.print(UI.TEXT_RED);
+                    System.out.print(UI.FONT);
+                }else {
+                    System.out.print(UI.TEXT_BLUE);
+                }
+                System.out.printf("%-" + (columnWidth - 1) + "s",cell.toString());
+                System.out.print(UI.TEXT_RESET);
                 System.out.print("|");
+                counter = false;
             }
             System.out.println();
         }
