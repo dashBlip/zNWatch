@@ -34,13 +34,14 @@ public class Pages {
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         do{
-            System.out.println("-------- Main Menu -------");
+            System.out.println(UI.TEXT_BLUE+"-------- Main Menu -------"+UI.TEXT_RESET);
             System.out.println("Press 1 : Display Stock");
             System.out.println("Press 2 : Holdings");
             System.out.println("Press 3 : Settings");
             System.out.println("Press 4 : Balance");
             System.out.println("Press 5 : Display Portfolio");
-            System.out.println("Press 6 : Exit");
+            System.out.println("Press 6 : Display All Users Data");
+            System.out.println(UI.TEXT_RED+"Press 7 : Exit"+UI.TEXT_RESET);
             System.out.print("Please Enter Your Choice : ");
 
             try{
@@ -83,9 +84,32 @@ public class Pages {
                     PortfolioManager.portfolio();
                     Thread.sleep(2000);
                 }
+                case 6 -> {
+                    resultSet = statement.executeQuery("SELECT COUNT(*) FROM AllDataView");
+                    resultSet.next();
+                    int rows = resultSet.getInt(1);
+
+                    resultSet = statement.executeQuery("SELECT * FROM AllDataView");
+
+                    Object[][] dataArray = new Object[rows][];
+                    int counter = 0;
+                    while (resultSet.next()){
+                        dataArray[counter++] = new Object[]{counter,resultSet.getString(1),resultSet.getString(2)
+                                , resultSet.getString(3), resultSet.getLong(4), resultSet.getString(5)
+                                , resultSet.getString(6), resultSet.getDouble(7), resultSet.getString(8)
+                                , resultSet.getDouble(9), resultSet.getInt(10), resultSet.getString(11)
+                                , resultSet.getString(12), resultSet.getString(13), resultSet.getString(14)
+                                , resultSet.getString(15), resultSet.getString(16)
+                        };
+                    }
+                    String[] HEADERS = {"Sr.No","UsrName","Name","DOB","Phone","Email","PAN","Balance","Stock","SPrice","Quantity","StockPD"
+                            ,"OldPass", "NewPass", "OldEmail", "NewEmail", "DeletePass"};
+                    UI.CustomTabularDisplay.printTable(HEADERS, dataArray, 14);
+                    System.out.println("\n");
+                }
                 default -> {}
             }
-        }while(choice != 6);
+        }while(choice != 7);
 
     }
     public static void BalancePane() throws SQLException, IOException, ParseException, ClassNotFoundException, InterruptedException {

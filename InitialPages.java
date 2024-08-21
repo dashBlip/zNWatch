@@ -16,22 +16,22 @@ public class InitialPages extends Pages{
     public static void welcomePage() throws SQLException, ClassNotFoundException, InterruptedException, IOException, ParseException {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(UserInterface.TEXT_GREEN);
+        System.out.println(UI.TEXT_GREEN);
         System.out.println("-".repeat(26));
-        System.out.println("|" + " ".repeat(7) +UserInterface.TEXT_RED+ "Welcome To" + " ".repeat(7) +UserInterface.TEXT_GREEN+"|");
-        System.out.println("|" + " ".repeat(7) +UserInterface.TEXT_RED+ " zNWatch  " + " ".repeat(7) +UserInterface.TEXT_GREEN+"|");
+        System.out.println("|" + " ".repeat(7) +UI.TEXT_RED+ "Welcome To" + " ".repeat(7) +UI.TEXT_GREEN+"|");
+        System.out.println("|" + " ".repeat(7) +UI.TEXT_RED+ " zNWatch  " + " ".repeat(7) +UI.TEXT_GREEN+"|");
         System.out.println("-".repeat(26)+"\n");
 
 
-        System.out.print(UserInterface.TEXT_MAGNETA);
+        System.out.print(UI.TEXT_MAGNETA);
         System.out.println(" ".repeat(4)+"Terms & Conditions\n");
-        System.out.print(UserInterface.TEXT_GREEN);
+        System.out.print(UI.TEXT_GREEN);
         System.out.println("-> he/she must be 18 years of age or older.");
         System.out.println("-> Use the Platform in accordance with any Applicable Laws," +
                 " regulations or generally accepted practices or guidelines");
         System.out.println("-> Shall not attempt to gain unauthorized access to any feature on the Platform.");
         System.out.println("-> Shall not violate the Terms and Conditions contained herein or elsewhere.\n");
-        System.out.println(UserInterface.TEXT_RESET);
+        System.out.println(UI.TEXT_RESET);
 
         System.out.println("Press 1 to Accept");
         System.out.println("Press 2 to Decline");
@@ -47,11 +47,12 @@ public class InitialPages extends Pages{
 
 
         if(choice == 1){
+            new UI().printMsgWithProgressBar("");
             loginPage();
         }else if(choice == 2){
-            System.out.println(UserInterface.TEXT_GREEN+"Thank You for using zNWatch !"+UserInterface.TEXT_RESET);
+            System.out.println(UI.TEXT_GREEN+"Thank You for using zNWatch !"+UI.TEXT_RESET);
         }else{
-            System.out.println("Please Enter Valid Choice");
+            System.out.println(UI.TEXT_RED+"Please Enter Valid Choice"+UI.TEXT_RESET);
             welcomePage();
         }
 
