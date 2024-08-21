@@ -18,15 +18,14 @@ public class InitialPages extends Pages{
 
         System.out.println(UI.TEXT_GREEN);
         System.out.println("-".repeat(26));
-        System.out.println("|" + " ".repeat(7) +UI.TEXT_RED+ "Welcome To" + " ".repeat(7) +UI.TEXT_GREEN+"|");
-        System.out.println("|" + " ".repeat(7) +UI.TEXT_RED+ " zNWatch  " + " ".repeat(7) +UI.TEXT_GREEN+"|");
+        System.out.println("|" + " ".repeat(7) +UI.TEXT_BLUE+ "Welcome To" + " ".repeat(7) +UI.TEXT_GREEN+"|");
+        System.out.println("|" + " ".repeat(7) +UI.TEXT_BLUE+ " zNWatch  " + " ".repeat(7) +UI.TEXT_GREEN+"|");
         System.out.println("-".repeat(26)+"\n");
 
 
-        System.out.print(UI.TEXT_MAGNETA);
-        System.out.println(" ".repeat(4)+"Terms & Conditions\n");
+        System.out.println(" ".repeat(4)+"Terms & Conditions\n"+" ".repeat(4)+"_".repeat(19));
         System.out.print(UI.TEXT_GREEN);
-        System.out.println("-> he/she must be 18 years of age or older.");
+        System.out.println(UI.TEXT_RED+"-> he/she must be 18 years of age or older."+UI.TEXT_GREEN);
         System.out.println("-> Use the Platform in accordance with any Applicable Laws," +
                 " regulations or generally accepted practices or guidelines");
         System.out.println("-> Shall not attempt to gain unauthorized access to any feature on the Platform.");
