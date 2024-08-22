@@ -1,4 +1,7 @@
-package StockManagementSystem;
+package StockManagementSystem.Pages;
+
+import StockManagementSystem.StockFunctionality.Stock;
+import StockManagementSystem.UI.UI;
 
 import java.io.*;
 import java.sql.ResultSet;
@@ -11,12 +14,12 @@ import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static StockManagementSystem.InitialPages.con;
-import static StockManagementSystem.InitialPages.loginPage;
+import static StockManagementSystem.Pages.InitialPages.con;
+import static StockManagementSystem.Pages.InitialPages.loginPage;
 
 
 public class Pages {
-    static File file = new File("StockData.txt");
+    static File file = new File("StockFunctionality/StockData.txt");
 
     static Stock[] stocks = new Stock[10];
     public static ResultSet resultSet;
@@ -56,12 +59,12 @@ public class Pages {
                 case 1 -> {
                     int choice2;
                     do{
-                        System.out.println("\nPress 1 : Buy");
-                        System.out.println("Press 2 : Sell");
+                        System.out.println(UI.TEXT_GREEN+"\nPress 1 : Buy");
+                        System.out.println(UI.TEXT_RED+"Press 2 : Sell"+UI.TEXT_RESET);
                         System.out.print("Please Enter Your Choice : ");
                         choice2 = sc.nextInt();
 
-                        System.out.println("-------- Stocks -------");
+                        System.out.println(" ".repeat(19)+UI.TEXT_YELLOW+"Stocks"+UI.TEXT_RESET);
                         if(choice2 == 1){
                             displayStock();
                         }else if(choice2 == 2){
@@ -374,14 +377,20 @@ public class Pages {
             oos.close();
         }
     }
+
+    static void displayStockTable(){
+        Object[][] ob = new Object[10][];
+        for (int i = 0; i < 10; i++) {
+            ob[i] = new Object[]{i+1,stocks[i].name, decimalFormat.format(stocks[i].currentPrice)};
+        }
+        UI.CustomTabularDisplay.printTable(new String[]{"Sr.No","StockName","Price"},ob,14);
+
+    }
     public static void displayStock() throws SQLException {
 
         Scanner sc = new Scanner(System.in);
 
-
-        for (int i = 0; i < 10; i++) {
-            System.out.print(i+1+" : "+stocks[i]+"\n\n");
-        }
+        displayStockTable();
 
         System.out.println("\nEnter The Stock Number You Want To Buy : ");
         int choice2 = sc.nextInt();

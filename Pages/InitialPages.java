@@ -1,4 +1,6 @@
-package StockManagementSystem;
+package StockManagementSystem.Pages;
+
+import StockManagementSystem.UI.UI;
 
 import java.io.IOException;
 import java.sql.*;
@@ -10,7 +12,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class InitialPages extends Pages{
+public class InitialPages extends Pages {
     public static Connection con ;
     static String passwordForLater;
     public static void welcomePage() throws SQLException, ClassNotFoundException, InterruptedException, IOException, ParseException {
