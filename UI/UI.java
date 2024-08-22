@@ -92,8 +92,9 @@ public class UI implements TextColors {
 
             progressBarBuffer.append("] ").append(progress * 100 / progressBarWidth).append('%');
             String progressBarWithBuffer = progressBarBuffer.toString();
-
+            System.out.print(UI.TEXT_YELLOW);
             System.out.print("\r" + progressBarWithBuffer);
+            System.out.print(UI.TEXT_RESET);
 
             try {
                 Thread.sleep(20);

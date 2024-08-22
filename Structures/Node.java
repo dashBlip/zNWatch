@@ -2,7 +2,7 @@ package StockManagementSystem.Structures;
 
 import StockManagementSystem.StockFunctionality.Stock;
 
-import static StockManagementSystem.Pages.Pages.decimalFormat;
+import static StockManagementSystem.Pages.MenuPageOptions.decimalFormat;
 
 public class Node {
 

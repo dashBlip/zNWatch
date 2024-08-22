@@ -1,5 +1,6 @@
 package StockManagementSystem.Pages;
 
+import StockManagementSystem.AppLog.Logger;
 import StockManagementSystem.UI.UI;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class InitialPages extends Pages {
+public class OnboardingPage extends MenuPageOptions {
     public static Connection con ;
     static String passwordForLater;
     public static void welcomePage() throws SQLException, ClassNotFoundException, InterruptedException, IOException, ParseException {
@@ -49,7 +50,7 @@ public class InitialPages extends Pages {
 
         if(choice == 1){
             new UI().printMsgWithProgressBar("");
-            loginPage();
+            RedirectionPage();
         }else if(choice == 2){
             System.out.println(UI.TEXT_GREEN+"Thank You for using zNWatch !"+UI.TEXT_RESET);
         }else{
@@ -61,7 +62,7 @@ public class InitialPages extends Pages {
 
 
 
-    public static void loginPage() throws SQLException, ClassNotFoundException, InterruptedException, IOException, ParseException {
+    public static void RedirectionPage() throws SQLException, ClassNotFoundException, InterruptedException, IOException, ParseException {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("\nPress 1 : To Register");
@@ -73,17 +74,18 @@ public class InitialPages extends Pages {
             choice = sc.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Invalid Choice !!");
-            loginPage();
+            RedirectionPage();
         }
 
 
         if (choice == 1) {
+            new Logger().makeLog("Registering new user");
             registerPane();
         } else if (choice == 2) {
             loginPane();
         } else {
             System.out.println("Please enter valid choice !");
-            loginPage();
+            RedirectionPage();
         }
     }
 
@@ -203,6 +205,7 @@ public class InitialPages extends Pages {
         if(toAllow){
             if(pswd.equals(pass)){
                 passwordForLater = pass;
+                new Logger().makeLog("Login as "+usrName);
                 menu(usrName);
             }else{
                 System.out.println("\nWrong Password ! Redirecting to Login Page Again ...");

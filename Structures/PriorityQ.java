@@ -3,7 +3,7 @@ package StockManagementSystem.Structures;
 import StockManagementSystem.StockFunctionality.Stock;
 import StockManagementSystem.UI.UI;
 
-import static StockManagementSystem.Pages.Pages.decimalFormat;
+import static StockManagementSystem.Pages.MenuPageOptions.decimalFormat;
 
 public class PriorityQ {
 

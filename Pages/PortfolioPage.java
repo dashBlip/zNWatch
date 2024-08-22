@@ -5,10 +5,10 @@ import StockManagementSystem.Structures.PriorityQ;
 
 import java.sql.SQLException;
 
-import static StockManagementSystem.Pages.Pages.*;
+import static StockManagementSystem.Pages.MenuPageOptions.*;
 
 
-public class PortfolioManager {
+public class PortfolioPage {
     public static void portfolio() throws SQLException {
         System.out.println("\n----------- Your Portfolio ----------");
 
