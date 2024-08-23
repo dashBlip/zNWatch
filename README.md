@@ -89,7 +89,9 @@ Here are some screenshots to help you get familiar with the application:
 
 1. **Database Management**:
 
-   ![Database Management](https://github.com/user-attachments/assets/62ab7661-9202-48b2-95c2-50dc3c10cc54)
+    ![database_Structure](https://github.com/user-attachments/assets/0f184f50-c299-4443-adce-624bc2c13a94)
+
+   
 
 ## Contact 📬
 
