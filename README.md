@@ -97,7 +97,8 @@ Here are some screenshots to help you get familiar with the application:
 
 
    
-3. **Use Case Diagram**:
+4. **Use Case Diagram**:
+   
    ![Use case diagram](https://github.com/user-attachments/assets/d1184adb-dd51-4839-a946-7c19bde99022)
 
     
