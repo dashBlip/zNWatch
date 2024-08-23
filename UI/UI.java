@@ -2,6 +2,26 @@ package StockManagementSystem.UI;
 
 public class UI implements TextColors {
 
+    static int width = 50;  // Adjust as needed
+    static String title = "WELCOME TO zNWatch";
+    static int padding = (width - title.length()) / 2;
+    static String spaces = " ".repeat(padding);
+
+
+    public static void printTOP(String s) {
+
+        System.out.println(s + TOP_LEFT + HORIZONTAL.repeat(width) + TOP_RIGHT + TEXT_RESET);
+        System.out.println(s + VERTICAL + spaces + TEXT_YELLOW + title + s + spaces + VERTICAL + TEXT_RESET);
+        System.out.println(s + BOTTOM_LEFT + HORIZONTAL.repeat(width) + BOTTOM_RIGHT + TEXT_RESET);
+        System.out.println();
+
+    }
+
+    public static void printBOTTOM(String s){
+        System.out.println();
+        System.out.println(s + BOTTOM_LEFT + HORIZONTAL.repeat(width) + BOTTOM_RIGHT + TEXT_RESET);
+    }
+
     public static class CustomTabularDisplay {
 
         public static void printTable(String[] headers, Object[][] data, int columnWidth) {
@@ -97,7 +117,7 @@ public class UI implements TextColors {
             System.out.print(UI.TEXT_RESET);
 
             try {
-                Thread.sleep(20);
+                Thread.sleep(15);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -12,6 +12,7 @@ import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
+import static StockManagementSystem.Pages.MenuPageOptions.decimalFormat;
 import static StockManagementSystem.Pages.OnboardingPage.con;
 
 public class MenuPage {
@@ -66,6 +67,7 @@ public class MenuPage {
                     } while (choice2 != 1 && choice2 != 2);
                 }
                 case 2 -> {
+                    System.out.println("-----------= Holdings =-----------");
                     MenuPage.holdingsPage();
                     Thread.sleep(1000);
                 }
@@ -90,16 +92,15 @@ public class MenuPage {
     }
 
     public static int holdingsPage() throws SQLException {
-        System.out.println("------- Your Holdings -------");
 
-        resultSet = statement.executeQuery("SELECT * FROM StockInfo WHERE Username = '" + userName + "'" + " AND Quantity != 0");
+        resultSet = statement.executeQuery("SELECT DISTINCT * FROM StockInfo WHERE Username = '" + userName + "'" + " AND Quantity != 0");
 
         int counter = 1;
         while (resultSet.next()) {
-            System.out.println((counter++) + " -> Stock Name :" + resultSet.getString(2)
-                    + "\n     Current Price : "
-                    + MenuPageOptions.decimalFormat.format(Objects.requireNonNull(MenuPageOptions.stockFinder(resultSet.getString(2))).currentPrice)
-                    + "\n     Purchased at : " + MenuPageOptions.decimalFormat.format(resultSet.getDouble(3))
+            System.out.println((counter++) + " -> Stock Name : " + UI.TEXT_YELLOW + resultSet.getString(2)
+                    + UI.TEXT_GREEN +"\n     Current Price : "
+                    + ( Double.parseDouble(MenuPageOptions.decimalFormat.format(Objects.requireNonNull(MenuPageOptions.stockFinder(resultSet.getString(2))).currentPrice))*resultSet.getInt(4))
+                    + UI.TEXT_RESET +"\n     Purchased at : " + MenuPageOptions.decimalFormat.format(resultSet.getDouble(3))
                     + "\n     Quantity Available : " + resultSet.getInt(4)
                     + "\n     Date of Purchase : " + resultSet.getString(5) + "\n"
             );
@@ -108,6 +109,15 @@ public class MenuPage {
     }
 
     public static void sellPane(int counter) throws SQLException {
+        Statement st = con.createStatement();
+        ResultSet rsTrash = st.executeQuery("SELECT COUNT(*) FROM ( SELECT DISTINCT * FROM StockInfo WHERE Username = '"+userName+"' ) AS distinct_rows; ");
+        rsTrash.next();
+
+        int rows = rsTrash.getInt(1);
+        if(rows == 0){
+            System.out.println(UI.TEXT_RED+"NO DATA HERE !!"+UI.TEXT_RESET);
+            return;
+        }
 
         System.out.print("Enter The Stock Number You Want To Sell : ");
         Scanner sc = new Scanner(System.in);
@@ -127,7 +137,10 @@ public class MenuPage {
                 int quantity = sc.nextInt();
 
                 Statement statement1 = con.createStatement();
-                ResultSet resultSet1 = statement1.executeQuery("SELECT * FROM StockInfo WHERE Username = '" + userName + "' AND Quantity != 0");
+
+                ResultSet resultSet1 = statement1.executeQuery("SELECT DISTINCT * FROM StockInfo WHERE Username = '" + userName + "' AND Quantity != 0");
+
+
                 while (choice-- > 0) {
                     resultSet1.next();
                 }
@@ -154,8 +167,8 @@ public class MenuPage {
 
                     statement.execute("UPDATE UserInfo SET Balance = " + nowBalance + " WHERE Username = '" + userName + "'");
 
-                    System.out.println("Stock Name : " + stockName + " And Amount : " + sellPrice);
-                    System.out.println("Amount Credited And Stock Sold !\n");
+                    System.out.println(UI.TEXT_GREEN+"-> Stock Name : " + stockName + " And Amount : " + sellPrice);
+                    System.out.println(UI.FONT+"-> Amount Credited And Stock Sold !\n"+UI.TEXT_RESET);
                 }
             }
 
@@ -183,7 +196,7 @@ public class MenuPage {
 
             double amtToDeduce = qty * amountDebitStock;
 
-            System.out.println("\nTotal Amount is : " + (amtToDeduce));
+            System.out.println(UI.TEXT_YELLOW+"\n-> Total Amount is : " + decimalFormat.format(amtToDeduce) + UI.TEXT_RESET);
 
             String SQLCommand = "Select Balance FROM UserInfo WHERE Username = '" + userName + "'\n\n";
             resultSet = statement.executeQuery(SQLCommand);
@@ -192,7 +205,7 @@ public class MenuPage {
             double deducedAmount = initialAmount - amtToDeduce;
 
             if (deducedAmount < 0) {
-                System.out.println("Not Enough Balance !\n");
+                System.out.println(UI.TEXT_RED+"Not Enough Balance !\n"+UI.TEXT_RESET);
             } else {
                 statement.execute("UPDATE UserInfo SET Balance = " + deducedAmount + " WHERE Username = '" + userName + "'");
 
@@ -201,7 +214,7 @@ public class MenuPage {
                         + " , " + qty + " , '" + (LocalDate.now()) + "')";
 
                 statement.execute(SQLCommand2);
-                System.out.println("Transaction Done SuccessFully " + userName);
+                System.out.println(UI.TEXT_GREEN + "-> Transaction Done SuccessFully " + userName+"\n" + UI.TEXT_RESET);
             }
         } else {
             System.out.println("Invalid Choice !!\n");

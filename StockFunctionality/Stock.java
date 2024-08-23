@@ -17,7 +17,7 @@ public class Stock implements Serializable {
         this.profit = currentPrice - purchasePrice;
     }
 
-    StockEngine st = new StockEngine();
+    public StockEngine st = new StockEngine();
 
     public void priceSetter(){
         Thread thread = new Thread(()->{

@@ -62,7 +62,6 @@ class LinkList {
 
     public void display() {
         Node current = first;
-
         while (current != null) {
             current.displayNode();
             current = current.next;

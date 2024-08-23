@@ -48,10 +48,10 @@ public class MenuPageOptions extends MenuPage {
         resultSet = statement.executeQuery("SELECT Balance FROM UserInfo WHERE Username = '"+userName+"'");
         resultSet.next();
 
-        System.out.println("\n--> Your Current Balance : "+resultSet.getDouble(1)+" rs\n");
+        System.out.println(UI.TEXT_YELLOW+"\n--> Your Current Balance : "+resultSet.getDouble(1)+" rs\n"+UI.TEXT_RESET);
 
-        System.out.println("Press 1 : Add Balance");
-        System.out.println("Press 2 : Debit Balance");
+        System.out.println("Press 1 : " + UI.TEXT_GREEN + "Credit Balance" + UI.TEXT_RESET);
+        System.out.println("Press 2 : " + UI.TEXT_RED + "Debit Balance" + UI.TEXT_RESET);
         System.out.println("Press 3 : Return");
 
         Scanner sc = new Scanner(System.in);
@@ -196,6 +196,10 @@ public class MenuPageOptions extends MenuPage {
         if(file.exists()){
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
             stocks = (Stock[]) ois.readObject();
+            for (Stock stock : stocks) {
+                stock.st.startManipulator(stock.currentPrice);
+                stock.priceSetter();
+            }
             ois.close();
         }else{
 
@@ -211,6 +215,7 @@ public class MenuPageOptions extends MenuPage {
             stocks[9] = new Stock("Yes Bank",10000);
         }
     }
+
     public static void StockSaver() throws IOException {
         if(!file.exists()){
             file.createNewFile();
@@ -227,7 +232,7 @@ public class MenuPageOptions extends MenuPage {
     static void displayStockTable(){
         Object[][] ob = new Object[10][];
         for (int i = 0; i < 10; i++) {
-            ob[i] = new Object[]{i+1,stocks[i].name, decimalFormat.format(stocks[i].currentPrice)};
+            ob[i] = new Object[]{i+1,stocks[i].name,decimalFormat.format(stocks[i].currentPrice)};
         }
         UI.CustomTabularDisplay.printTable(new String[]{"Sr.No","StockName","Price"},ob,14);
 

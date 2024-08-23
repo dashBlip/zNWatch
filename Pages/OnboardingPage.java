@@ -19,12 +19,7 @@ public class OnboardingPage extends MenuPageOptions {
     public static void welcomePage() throws SQLException, ClassNotFoundException, InterruptedException, IOException, ParseException {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(UI.TEXT_GREEN);
-        System.out.println("-".repeat(26));
-        System.out.println("|" + " ".repeat(7) +UI.TEXT_BLUE+ "Welcome To" + " ".repeat(7) +UI.TEXT_GREEN+"|");
-        System.out.println("|" + " ".repeat(7) +UI.TEXT_BLUE+ " zNWatch  " + " ".repeat(7) +UI.TEXT_GREEN+"|");
-        System.out.println("-".repeat(26)+"\n");
-
+        UI.printTOP(UI.TEXT_BLUE);
 
         System.out.println(" ".repeat(4)+"Terms & Conditions\n"+" ".repeat(4)+"_".repeat(19));
         System.out.print(UI.TEXT_GREEN);
