@@ -1,7 +1,9 @@
 
+---
+
 # zNWatch 📈
 
-**zNWatch** is a Java-based console application designed to simulate stock market operations. This application provides a range of features for managing and manipulating dummy stock data, including real-time stock value changes, JDBC integration for database operations, file input/output for data persistence, and serialization to preserve application state between sessions.
+**zNWatch** is a Java-based console application designed to simulate stock market operations. This application provides a range of features for managing and manipulating dummy stock data, including real-time stock value changes, JDBC integration for database operations, file input/output for data persistence, serialization to preserve application state between sessions, and a new admin feature for enhanced control.
 
 ## Features
 
@@ -9,6 +11,7 @@
 - **JDBC Integration**: Connects to relational databases (e.g., MySQL, PostgreSQL) to manage and retrieve stock data. 💾
 - **File I/O**: Facilitates reading from and writing to files for data persistence. 📂
 - **Serialization**: Supports serialization and deserialization of stock data to maintain state between different runs of the application. 🔄
+- **Admin Feature**: Allows administrators to perform advanced operations, such as managing user roles and accessing detailed logs. 👨‍💼
 
 ## Getting Started 🚀
 
@@ -81,29 +84,34 @@ git clone https://github.com/dashBlip/zNWatch.git
 
 1. **Start the Application**: Launch the application to begin simulating stock market operations. 🚀
 
-2. **Interact with the Console**: Follow the prompts in the console to manipulate stock data, view stock prices, and perform other operations. 🖥️
+2. **Interact with the Console**: Follow the prompts in the console to manipulate stock data, view stock prices, perform admin tasks, and carry out other operations. 🖥️
 
 ## Screenshots
 
 Here are some screenshots to help you get familiar with the application:
 
-1. **Database Management**:
+### Database Management
 
-    ![database_Structure](https://github.com/user-attachments/assets/0f184f50-c299-4443-adce-624bc2c13a94)
+The database management interface provides a view of the database schema and allows for interactions with stock data.
 
-2. **Class Diagram**:
+![Database Structure](https://github.com/user-attachments/assets/0f184f50-c299-4443-adce-624bc2c13a94)
 
-    ![lsls2](https://github.com/user-attachments/assets/5a29e420-8269-4e6e-92ca-202cd8f971ff)
+### Class Diagram
 
+The class diagram illustrates the main components of the zNWatch application and their relationships.
 
-   
-4. **Use Case Diagram**:
-   
-   ![Use case diagram](https://github.com/user-attachments/assets/d1184adb-dd51-4839-a946-7c19bde99022)
+![Class Diagram](https://github.com/user-attachments/assets/5a29e420-8269-4e6e-92ca-202cd8f971ff)
 
-    
+### Use Case Diagram
+
+The use case diagram depicts the interactions between different user roles and the system functionalities.
+
+![Use Case Diagram](https://github.com/user-attachments/assets/d1184adb-dd51-4839-a946-7c19bde99022)
+
 ## Contact 📬
 
 For any questions or support, please reach out to:
 
 - **Email**: connect_yuvraj@outlook.com
+
+---
