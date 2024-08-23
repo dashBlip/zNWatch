@@ -24,12 +24,13 @@ public class PriorityQ {
 
     public void displayList() {
         list.display();
-        System.out.println(" ".repeat(6) + "-".repeat(20));
+
         if (list.giveTotalProfit() > 0) {
-            System.out.println(" ".repeat(6) + "| Total P&L : " + UI.TEXT_GREEN + decimalFormat.format(list.giveTotalProfit()) + UI.TEXT_RESET + " |");
+            UI.CustomTabularDisplay.printTable(new String[]{"No.","Total P&L"},new Object[][]{{1,UI.TEXT_RED + decimalFormat.format(list.giveTotalProfit())
+                    + UI.TEXT_RESET}},15);
         } else {
-            System.out.println(" ".repeat(6) + "| Total P&L : " + UI.TEXT_RED + decimalFormat.format(list.giveTotalProfit()) + UI.TEXT_RESET + " |");
+            UI.CustomTabularDisplay.printTable(new String[]{"No","Total P&L"},new Object[][]{{1,UI.TEXT_RED + decimalFormat.format(list.giveTotalProfit())
+                    + UI.TEXT_RESET}},15);
         }
-        System.out.println(" ".repeat(6) + "-".repeat(20) + "\n");
     }
 }

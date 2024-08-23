@@ -19,36 +19,13 @@ public class MenuPageOptions extends MenuPage {
     static Stock[] stocks = new Stock[10];
     public static DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
-    public static void displayView() throws SQLException {
-        resultSet = statement.executeQuery("SELECT COUNT(*) FROM AllDataView");
-        resultSet.next();
-        int rows = resultSet.getInt(1);
-
-        resultSet = statement.executeQuery("SELECT * FROM AllDataView");
-
-        Object[][] dataArray = new Object[rows][];
-        int counter = 0;
-        while (resultSet.next()){
-            dataArray[counter++] = new Object[]{counter,resultSet.getString(1),resultSet.getString(2)
-                    , resultSet.getString(3), resultSet.getLong(4), resultSet.getString(5)
-                    , resultSet.getString(6), resultSet.getDouble(7), resultSet.getString(8)
-                    , resultSet.getDouble(9), resultSet.getInt(10), resultSet.getString(11)
-                    , resultSet.getString(12), resultSet.getString(13), resultSet.getString(14)
-                    , resultSet.getString(15), resultSet.getString(16)
-            };
-        }
-        String[] HEADERS = {"Sr.No","UsrName","Name","DOB","Phone","Email","PAN","Balance","Stock","SPrice","Quantity","StockPD"
-                ,"OldPass", "NewPass", "OldEmail", "NewEmail", "DeletePass"};
-        UI.CustomTabularDisplay.printTable(HEADERS, dataArray, 14);
-        System.out.println("\n");
-    }
 
     public static void BalancePane() throws SQLException{
 
         resultSet = statement.executeQuery("SELECT Balance FROM UserInfo WHERE Username = '"+userName+"'");
         resultSet.next();
 
-        System.out.println(UI.TEXT_YELLOW+"\n--> Your Current Balance : "+resultSet.getDouble(1)+" rs\n"+UI.TEXT_RESET);
+        System.out.println(UI.TEXT_YELLOW+"\n--> Your Current Balance : "+decimalFormat.format(resultSet.getDouble(1))+" rs\n"+UI.TEXT_RESET);
 
         System.out.println("Press 1 : " + UI.TEXT_GREEN + "Credit Balance" + UI.TEXT_RESET);
         System.out.println("Press 2 : " + UI.TEXT_RED + "Debit Balance" + UI.TEXT_RESET);
@@ -72,64 +49,70 @@ public class MenuPageOptions extends MenuPage {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\n------- Settings -------");
-        System.out.println("Press 1 : delete Account");
+        System.out.println(UI.TEXT_YELLOW + "\n------- Settings -------" + UI.TEXT_RESET);
+        System.out.println(UI.TEXT_RED + "Press 1 : delete Account"+ UI.TEXT_RESET);
         System.out.println("Press 2 : Edit Password");
         System.out.println("Press 3 : Edit eMail");
         System.out.println("Press 4 : Go Back");
+        System.out.println( UI.TEXT_YELLOW + "PRESS 5 : LOG OUT" + UI.TEXT_RESET);
         System.out.print("Please Enter Your Choice : ");
 
         int choice = 0;
         try {
             choice = sc.nextInt();
+            switch (choice) {
+                case 1 -> {
+                    System.out.println("Please Enter Password For Confirmation : ");
+                    String pass = sc.next();
+                    if (pass.equals(OnboardingPage.passwordForLater)) {
+                        statement.execute("DELETE FROM UserInfo WHERE Username = '" + userName + "'");
+                        RedirectionPage();
+                    } else {
+                        System.out.println("Invalid Password !! ");
+                    }
+                }
+
+                case 2 -> {
+                    System.out.println("Please Enter Password For Confirmation : ");
+                    String pass = sc.next();
+
+                    if (pass.equals(OnboardingPage.passwordForLater)) {
+
+                        System.out.print("Enter New Password : ");
+                        String newPass = sc.next();
+                        statement.execute("UPDATE UserInfo SET Password = '" + newPass + "' WHERE Username = '" + userName + "'");
+                        System.out.println("Password Updated Successfully !!\n");
+                        OnboardingPage.passwordForLater = newPass;
+
+                    } else {
+                        System.out.println("Invalid Password !! ");
+                    }
+                }
+
+                case 3 -> {
+                    System.out.print("Enter New eMail : ");
+                    String newEmail = sc.next();
+                    statement.execute("UPDATE UserInfo SET eMail = '" + newEmail + "' WHERE Username = '" + userName + "'");
+                    System.out.println("eMail Updated Successfully !!\n");
+                }
+                case 4 -> {
+                    System.out.println();
+                }
+
+                case 5 -> {
+                    OnboardingPage.loginPane();
+                    System.exit(0);
+                }
+
+                default -> {
+                    System.out.println("Invalid Choice !!");
+                    settings();
+                }
+            }
+
         } catch (InputMismatchException e) {
             System.out.println("Enter Valid Choice !!");
             settings();
-        }
-
-
-        switch (choice) {
-            case 1 -> {
-                System.out.println("Please Enter Password For Confirmation : ");
-                String pass = sc.next();
-                if (pass.equals(OnboardingPage.passwordForLater)) {
-                    statement.execute("DELETE FROM UserInfo WHERE Username = '" + userName + "'");
-                    RedirectionPage();
-                } else {
-                    System.out.println("Invalid Password !! ");
-                }
-            }
-
-            case 2 -> {
-                System.out.println("Please Enter Password For Confirmation : ");
-                String pass = sc.next();
-
-                if (pass.equals(OnboardingPage.passwordForLater)) {
-
-                    System.out.print("Enter New Password : ");
-                    String newPass = sc.next();
-                    statement.execute("UPDATE UserInfo SET Password = '" + newPass + "' WHERE Username = '" + userName + "'");
-                    System.out.println("Password Updated Successfully !!\n");
-                    OnboardingPage.passwordForLater = newPass;
-
-                } else {
-                    System.out.println("Invalid Password !! ");
-                }
-            }
-
-            case 3 -> {
-                System.out.print("Enter New eMail : ");
-                String newEmail = sc.next();
-                statement.execute("UPDATE UserInfo SET eMail = '" + newEmail + "' WHERE Username = '" + userName + "'");
-                System.out.println("eMail Updated Successfully !!\n");
-            }
-            case 4 -> {
-                System.out.println();
-            }
-            default -> {
-                System.out.println("Invalid Choice !!");
-                settings();
-            }
         }
     }
 

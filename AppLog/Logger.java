@@ -14,7 +14,7 @@ public class Logger {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDateTime = now.format(formatter);
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("zNWatch/AppLog/log.txt", true))) { // 'true' for append mode
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("zNWatch/AppLog/log.txt", true))) {
             writer.write(formattedDateTime+" : "+log);
             writer.newLine();
         } catch (IOException e) {

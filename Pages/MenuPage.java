@@ -31,13 +31,12 @@ public class MenuPage {
         int choice = 0;
         do {
             System.out.println(UI.TEXT_BLUE + "-------- Main Menu -------" + UI.TEXT_RESET);
-            System.out.println("Press 1 : Display Stock");
+            System.out.println("Press 1 : " + UI.TEXT_GREEN + "BUY" + UI.TEXT_RESET + "/" + UI.TEXT_RED + "SELL" + UI.TEXT_RESET + " Stock");
             System.out.println("Press 2 : Holdings");
             System.out.println("Press 3 : Settings");
             System.out.println("Press 4 : Balance");
             System.out.println("Press 5 : Display Portfolio");
-            System.out.println("Press 6 : Display All Users Data");
-            System.out.println(UI.TEXT_RED + "Press 7 : Exit" + UI.TEXT_RESET);
+            System.out.println(UI.TEXT_RED + "Press 6 : Exit" + UI.TEXT_RESET);
             System.out.print("Please Enter Your Choice : ");
 
             try {
@@ -78,16 +77,38 @@ public class MenuPage {
                     MenuPageOptions.BalancePane();
                 }
                 case 5 -> {
-                    PortfolioPage.portfolio();
-                    Thread.sleep(2000);
-                }
-                case 6 -> {
-                    MenuPageOptions.displayView();
+                    boolean falg = false;
+                    do {
+                        System.out.println(UI.TEXT_YELLOW + "\nHow Do you want your data to be Displayed ?" + UI.TEXT_RESET);
+                        System.out.println("PRESS 1 : Based On P&L");
+                        System.out.println("PRESS 2 : Based On Purchased Price");
+                        System.out.print("Enter Your Choice : ");
+                        int choiceNew = 0;
+                        try {
+                            choiceNew = sc.nextInt();
+                            falg = false;
+
+                            if(choiceNew == 1){
+                                PortfolioPage.portfolio();
+                                Thread.sleep(2000);
+                            }else if(choiceNew == 2){
+                                PortfolioPage.portfolioPurchase();
+                                Thread.sleep(2000);
+                            }else{
+                                falg = true;
+                                System.out.println(UI.TEXT_RED + "Please Enter valid OPTION !!");
+                            }
+                        } catch (Exception e) {
+                            System.out.println(UI.TEXT_RED + "Please Enter valid value !!");
+                            falg = true;
+                        }
+                    }while (falg);
+
                 }
                 default -> {
                 }
             }
-        } while (choice != 7);
+        } while (choice != 6);
 
     }
 

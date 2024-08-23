@@ -2,7 +2,7 @@ package StockManagementSystem.UI;
 
 public class UI implements TextColors {
 
-    static int width = 50;  // Adjust as needed
+    static int width = 50;
     static String title = "WELCOME TO zNWatch";
     static int padding = (width - title.length()) / 2;
     static String spaces = " ".repeat(padding);
