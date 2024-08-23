@@ -91,8 +91,16 @@ Here are some screenshots to help you get familiar with the application:
 
     ![database_Structure](https://github.com/user-attachments/assets/0f184f50-c299-4443-adce-624bc2c13a94)
 
-   
+2. **Class Diagram**:
 
+    ![lsls2](https://github.com/user-attachments/assets/5a29e420-8269-4e6e-92ca-202cd8f971ff)
+
+
+   
+3. **Use Case Diagram**:
+   ![Use case diagram](https://github.com/user-attachments/assets/d1184adb-dd51-4839-a946-7c19bde99022)
+
+    
 ## Contact 📬
 
 For any questions or support, please reach out to:
