@@ -1,0 +1,9 @@
+<map id="StockManagementSystem.Pages.OnboardingPage.RedirectionPage" name="StockManagementSystem.Pages.OnboardingPage.RedirectionPage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="568,29,785,70"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="720,16,704,10,677,8,651,10,636,15,630,21,632,28,627,29,625,19,633,10,650,5,677,3,705,5,722,11"/>
+<area shape="rect" id="Node000002" href="$classStockManagementSystem_1_1Pages_1_1OnboardingPage.html#ad186cf9c118f7fa208a6b79b36a9d325" title=" " alt="" coords="303,29,520,70"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="552,52,521,52,521,47,552,47"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="455,16,439,10,411,8,386,10,370,15,364,21,367,28,362,29,359,19,367,10,385,5,411,3,440,5,457,11"/>
+<area shape="rect" id="Node000003" href="$classStockManagementSystem_1_1Runner.html#ad937ebd6fad1db78ce2da88dedda2ae7" title=" " alt="" coords="5,37,255,62"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="287,52,255,52,255,47,287,47"/>
+</map>

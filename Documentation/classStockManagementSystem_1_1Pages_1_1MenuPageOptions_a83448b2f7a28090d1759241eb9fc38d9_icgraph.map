@@ -1,0 +1,24 @@
+<map id="StockManagementSystem.Pages.MenuPageOptions.settings" name="StockManagementSystem.Pages.MenuPageOptions.settings">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1629,109,1847,150"/>
+<area shape="poly" id="edge15_Node000001_Node000001" title=" " alt="" coords="1782,96,1765,90,1738,88,1713,90,1697,95,1691,101,1694,108,1688,109,1686,99,1694,90,1712,85,1738,83,1766,85,1783,91"/>
+<area shape="rect" id="Node000002" href="$classStockManagementSystem_1_1Pages_1_1MenuPage.html#a72ff33116738048fc325add200c14ea6" title=" " alt="" coords="1364,80,1581,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1613,119,1582,115,1582,110,1614,113"/>
+<area shape="poly" id="edge10_Node000002_Node000002" title=" " alt="" coords="1516,67,1500,61,1473,59,1447,61,1432,65,1426,71,1428,79,1423,80,1421,70,1429,61,1446,55,1473,53,1501,56,1518,62"/>
+<area shape="rect" id="Node000003" href="$classStockManagementSystem_1_1Pages_1_1OnboardingPage.html#a4ad6834ac6e648d5cef9e8fcd86770b1" title=" " alt="" coords="833,99,1051,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1349,107,1051,118,1051,113,1348,102"/>
+<area shape="rect" id="Node000007" href="$classStockManagementSystem_1_1Pages_1_1OnboardingPage.html#af9732c13517b4d1c8151c6912516620b" title=" " alt="" coords="1099,29,1316,70"/>
+<area shape="poly" id="edge11_Node000002_Node000007" title=" " alt="" coords="1348,79,1316,73,1317,68,1349,74"/>
+<area shape="poly" id="edge9_Node000003_Node000001" title=" " alt="" coords="1066,121,1364,130,1581,130,1629,129,1629,134,1581,135,1364,135,1066,127"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="986,86,969,80,942,77,917,79,901,84,895,90,898,97,892,99,890,89,898,80,916,74,942,72,970,74,987,81"/>
+<area shape="rect" id="Node000004" href="$classStockManagementSystem_1_1Pages_1_1OnboardingPage.html#a4b11222f86a3a956477140d25836e1e6" title=" " alt="" coords="568,59,785,99"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="817,103,786,98,786,93,818,98"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="720,46,704,40,677,37,651,39,636,44,630,50,632,57,627,59,625,49,633,40,650,34,677,32,705,34,722,41"/>
+<area shape="rect" id="Node000005" href="$classStockManagementSystem_1_1Pages_1_1OnboardingPage.html#ad186cf9c118f7fa208a6b79b36a9d325" title=" " alt="" coords="303,59,520,99"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="552,82,521,82,521,76,552,76"/>
+<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="455,46,439,40,411,37,386,39,370,44,364,50,367,57,362,59,359,49,367,40,385,34,411,32,440,34,457,41"/>
+<area shape="rect" id="Node000006" href="$classStockManagementSystem_1_1Runner.html#ad937ebd6fad1db78ce2da88dedda2ae7" title=" " alt="" coords="5,66,255,92"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="287,82,255,82,255,76,287,76"/>
+<area shape="poly" id="edge12_Node000007_Node000003" title=" " alt="" coords="1113,77,1023,101,1022,96,1111,72"/>
+<area shape="poly" id="edge13_Node000007_Node000004" title=" " alt="" coords="1083,55,834,66,786,70,785,64,833,60,1083,49"/>
+<area shape="poly" id="edge14_Node000007_Node000007" title=" " alt="" coords="1251,16,1235,10,1207,8,1182,10,1166,15,1160,21,1163,28,1158,29,1155,19,1163,10,1181,5,1207,3,1236,5,1253,11"/>
+</map>

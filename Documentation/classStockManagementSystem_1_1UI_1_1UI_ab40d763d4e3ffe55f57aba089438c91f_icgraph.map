@@ -1,0 +1,11 @@
+<map id="StockManagementSystem.UI.UI.printTOP" name="StockManagementSystem.UI.UI.printTOP">
+<area shape="rect" id="Node000001" title=" " alt="" coords="568,51,762,91"/>
+<area shape="rect" id="Node000002" href="$classStockManagementSystem_1_1Pages_1_1AdminMenuPage.html#a530dd798d93fe5d9cf963bfbdc6b5a32" title=" " alt="" coords="303,5,520,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="552,54,520,48,521,43,553,48"/>
+<area shape="rect" id="Node000004" href="$classStockManagementSystem_1_1Pages_1_1OnboardingPage.html#ad186cf9c118f7fa208a6b79b36a9d325" title=" " alt="" coords="303,95,520,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="553,93,521,99,520,93,552,88"/>
+<area shape="rect" id="Node000003" href="$classStockManagementSystem_1_1Runner.html#ad937ebd6fad1db78ce2da88dedda2ae7" title=" " alt="" coords="5,58,255,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,48,215,60,214,55,287,43"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="287,98,216,87,217,82,288,93"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="453,82,437,76,411,73,387,75,372,80,367,86,369,93,364,95,361,85,369,76,386,70,411,68,439,70,455,77"/>
+</map>

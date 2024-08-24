@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['screenshots_0',['Screenshots',['../md__2D_2Java_2SessionAlpha_2zNWatch_2README.html#autotoc_md8',1,'']]],
+  ['search_1',['search',['../classStockManagementSystem_1_1Structures_1_1BinarySearchTree.html#a43426a72703ea58919db856cc5c43596',1,'StockManagementSystem::Structures::BinarySearchTree']]],
+  ['sellpane_2',['sellPane',['../classStockManagementSystem_1_1Pages_1_1MenuPage.html#af30de16f61cc0fcde52df1ffa8e82e0f',1,'StockManagementSystem::Pages::MenuPage']]],
+  ['settings_3',['settings',['../classStockManagementSystem_1_1Pages_1_1MenuPageOptions.html#a83448b2f7a28090d1759241eb9fc38d9',1,'StockManagementSystem::Pages::MenuPageOptions']]],
+  ['st_4',['st',['../classStockManagementSystem_1_1StockFunctionality_1_1Stock.html#afb19b0f5ddff05408ac89b3b7a490782',1,'StockManagementSystem::StockFunctionality::Stock']]],
+  ['started_20🚀_5',['Getting Started 🚀',['../md__2D_2Java_2SessionAlpha_2zNWatch_2README.html#autotoc_md3',1,'']]],
+  ['startmanipulator_6',['startManipulator',['../classStockManagementSystem_1_1StockFunctionality_1_1StockEngine.html#a23fd09c92913dfd8d01a423f0fe2422d',1,'StockManagementSystem::StockFunctionality::StockEngine']]],
+  ['statement_7',['statement',['../classStockManagementSystem_1_1Pages_1_1MenuPage.html#aba0fe22f2e5962b1dcc00c2ebbb1ecef',1,'StockManagementSystem::Pages::MenuPage']]],
+  ['stock_8',['Stock',['../classStockManagementSystem_1_1StockFunctionality_1_1Stock.html',1,'StockManagementSystem.StockFunctionality.Stock'],['../classStockManagementSystem_1_1StockFunctionality_1_1Stock.html#a7ffd9c9fded1cc4574e333d075c9202d',1,'StockManagementSystem.StockFunctionality.Stock.Stock(String name, double currentPrice)'],['../classStockManagementSystem_1_1StockFunctionality_1_1Stock.html#a6bb8e8a5b5226bb46d48640a49ca40fd',1,'StockManagementSystem.StockFunctionality.Stock.Stock(String name, double currentPrice, double purchasePrice, int quantity)']]],
+  ['stock_9',['stock',['../classStockManagementSystem_1_1Structures_1_1Node.html#a03aee0eff4d48eeb3f166bc33e8e26fe',1,'StockManagementSystem::Structures::Node']]],
+  ['stock_2ejava_10',['Stock.java',['../Stock_8java.html',1,'']]],
+  ['stockengine_11',['StockEngine',['../classStockManagementSystem_1_1StockFunctionality_1_1StockEngine.html',1,'StockManagementSystem::StockFunctionality']]],
+  ['stockengine_2ejava_12',['StockEngine.java',['../StockEngine_8java.html',1,'']]],
+  ['stockfinder_13',['stockFinder',['../classStockManagementSystem_1_1Pages_1_1MenuPageOptions.html#a2661fa9fffda931ea2b7a51dc9d2bb59',1,'StockManagementSystem::Pages::MenuPageOptions']]],
+  ['stockloader_14',['StockLoader',['../classStockManagementSystem_1_1Pages_1_1MenuPageOptions.html#a5cddfd5121ae9b057761d24cddf8132f',1,'StockManagementSystem::Pages::MenuPageOptions']]],
+  ['stockmanagementsystem_15',['StockManagementSystem',['../namespaceStockManagementSystem.html',1,'']]],
+  ['stockmanagementsystem_3a_3aapplog_16',['AppLog',['../namespaceStockManagementSystem_1_1AppLog.html',1,'StockManagementSystem']]],
+  ['stockmanagementsystem_3a_3apages_17',['Pages',['../namespaceStockManagementSystem_1_1Pages.html',1,'StockManagementSystem']]],
+  ['stockmanagementsystem_3a_3astockfunctionality_18',['StockFunctionality',['../namespaceStockManagementSystem_1_1StockFunctionality.html',1,'StockManagementSystem']]],
+  ['stockmanagementsystem_3a_3astructures_19',['Structures',['../namespaceStockManagementSystem_1_1Structures.html',1,'StockManagementSystem']]],
+  ['stockmanagementsystem_3a_3aui_20',['UI',['../namespaceStockManagementSystem_1_1UI.html',1,'StockManagementSystem']]],
+  ['stocksaver_21',['StockSaver',['../classStockManagementSystem_1_1Pages_1_1MenuPageOptions.html#ac99a919d87a00324854a8cde413f9701',1,'StockManagementSystem::Pages::MenuPageOptions']]]
+];

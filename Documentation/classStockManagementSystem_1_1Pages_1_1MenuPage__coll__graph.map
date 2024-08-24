@@ -1,0 +1,7 @@
+<map id="StockManagementSystem.Pages.MenuPage" name="StockManagementSystem.Pages.MenuPage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,94,223,135"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="23,5,101,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,45,84,69,100,92,95,95,79,71,68,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="125,5,207,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,46,127,95,123,92,150,43"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="StockManagementSystem.StockFunctionality.Stock" name="StockManagementSystem.StockFunctionality.Stock">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,184,217,225"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="62,5,149,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,46,113,184,108,184,104,47"/>
+<area shape="rect" id="Node000003" href="$classStockManagementSystem_1_1StockFunctionality_1_1StockEngine.html" title=" " alt="" coords="127,80,338,121"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="139,37,203,78,200,82,136,42"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,133,136,186,133,182,196,129"/>
+</map>

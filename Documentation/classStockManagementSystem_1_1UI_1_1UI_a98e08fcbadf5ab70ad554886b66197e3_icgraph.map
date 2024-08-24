@@ -1,0 +1,8 @@
+<map id="StockManagementSystem.UI.UI.printMsgWithProgressBar" name="StockManagementSystem.UI.UI.printMsgWithProgressBar">
+<area shape="rect" id="Node000001" title=" " alt="" coords="568,29,762,70"/>
+<area shape="rect" id="Node000002" href="$classStockManagementSystem_1_1Pages_1_1OnboardingPage.html#ad186cf9c118f7fa208a6b79b36a9d325" title=" " alt="" coords="303,29,520,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="552,52,521,52,521,47,552,47"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="453,16,437,10,411,8,387,10,372,15,367,21,369,28,364,29,361,19,369,10,386,5,411,3,439,5,455,11"/>
+<area shape="rect" id="Node000003" href="$classStockManagementSystem_1_1Runner.html#ad937ebd6fad1db78ce2da88dedda2ae7" title=" " alt="" coords="5,37,255,62"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,52,255,52,255,47,287,47"/>
+</map>
