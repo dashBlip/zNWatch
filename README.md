@@ -100,7 +100,7 @@ The database management interface provides a view of the database schema and all
 
 The class diagram illustrates the main components of the zNWatch application and their relationships.
 
-![Class Diagram](https://github.com/user-attachments/assets/5a29e420-8269-4e6e-92ca-202cd8f971ff)
+![Class_Diagram](https://github.com/user-attachments/assets/f6815c50-0071-4f26-b27d-6690f54a2682)
 
 ### Use Case Diagram
 
