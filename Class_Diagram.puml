@@ -1,0 +1,170 @@
+@startuml
+class StockManagementSystem.StockFunctionality.StockEngine {
+- double[] d
++ void startManipulator(double)
++ double priceReturner()
+}
+
+
+class StockManagementSystem.Pages.MenuPageOptions {
+~ {static} File file
+~ {static} Stock[] stocks
++ {static} DecimalFormat decimalFormat
++ {static} void BalancePane()
++ {static} void settings()
++ {static} void addBalance()
++ {static} void removeBalance()
++ {static} Stock stockFinder(String)
++ {static} void StockLoader()
++ {static} void StockSaver()
+~ {static} void displayStockTable()
+}
+
+
+class StockManagementSystem.UI.UI {
+~ {static} int width
+~ {static} String title
+~ {static} int padding
+~ {static} String spaces
++ {static} void printTOP(String)
++ {static} void printBOTTOM(String)
++ void printMsgWithProgressBar(String)
+}
+
+
+class StockManagementSystem.UI.UI$CustomTabularDisplay {
++ {static} void printTable(String[],Object[][],int)
+- {static} void printHeader(String[],int)
+- {static} void printSeparator(int,int)
+- {static} void printDataRow(Object[],int)
+}
+
+class StockManagementSystem.Structures.PriorityQ {
+- LinkList list
++ <<Create>> PriorityQ()
++ void insert(Stock)
++ void remove()
++ void displayList()
+}
+
+
+interface StockManagementSystem.UI.TextColors {
+~ {static} String TEXT_RESET
+~ {static} String TEXT_BLUE
+~ {static} String TEXT_GREEN
+~ {static} String TEXT_RED
+~ {static} String TEXT_YELLOW
+~ {static} String FONT
+~ {static} String HORIZONTAL
+~ {static} String VERTICAL
+~ {static} String TOP_LEFT
+~ {static} String TOP_RIGHT
+~ {static} String BOTTOM_LEFT
+~ {static} String BOTTOM_RIGHT
+~ {static} String CROSS
+~ void printMsgWithProgressBar(String)
+}
+
+
+class StockManagementSystem.Structures.LinkList {
+- Node first
++ <<Create>> LinkList()
++ double giveTotalProfit()
++ boolean isEmpty()
++ void insert(Stock)
++ void remove()
++ void display()
+}
+
+
+class StockManagementSystem.Pages.AdminMenuPage {
+- void displayView()
++ void adminMenu()
+}
+
+class StockManagementSystem.Pages.OnboardingPage {
++ {static} Connection con
+~ {static} String passwordForLater
++ {static} void welcomePage()
++ {static} void RedirectionPage()
+- {static} boolean checkPhoneNumber(long)
++ {static} void JDBCConnectionCode()
++ {static} void registerPane()
++ {static} void loginPane()
+}
+
+
+class StockManagementSystem.AppLog.Logger {
++ void makeLog(String)
+}
+
+class StockManagementSystem.StockFunctionality.Stock {
++ StockEngine st
++ String name
++ double currentPrice
++ double purchasePrice
++ double profit
++ <<Create>> Stock(String,double)
++ <<Create>> Stock(String,double,double,int)
++ void priceSetter()
++ String toString()
+}
+
+
+class StockManagementSystem.Runner {
++ {static} void main(String[])
+}
+
+class StockManagementSystem.Structures.BinarySearchTree {
+- Node root
++ {static} DecimalFormat decimalFormat
+~ double sum
++ <<Create>> BinarySearchTree()
++ void insert(Stock)
+- void insertRec(Node,Node)
++ Node search(double)
+- Node searchRec(Node,double)
++ void inOrderTraversal()
++ double giveTotalProfit()
+- void inOrderRec(Node)
+}
+
+
+class StockManagementSystem.Pages.PortfolioPage {
++ {static} void portfolio()
++ {static} void portfolioPurchase()
+}
+
+class StockManagementSystem.Pages.MenuPage {
++ {static} ResultSet resultSet
++ {static} Statement statement
++ {static} String userName
++ {static} void menu(String)
++ {static} int holdingsPage()
++ {static} void sellPane(int)
++ {static} void displayStock()
+}
+
+
+class StockManagementSystem.Structures.Node {
++ Stock stock
++ double iData
++ double purchasedWithPrice
++ Node next
++ Node left
++ Node right
++ <<Create>> Node(Stock)
++ void displayNode()
+}
+
+
+
+
+java.io.Serializable <|.. StockManagementSystem.StockFunctionality.StockEngine
+StockManagementSystem.Pages.MenuPage <|-- StockManagementSystem.Pages.MenuPageOptions
+StockManagementSystem.UI.TextColors <|.. StockManagementSystem.UI.UI
+StockManagementSystem.UI.UI +.. StockManagementSystem.UI.UI$CustomTabularDisplay
+StockManagementSystem.Pages.MenuPageOptions <|-- StockManagementSystem.Pages.OnboardingPage
+java.io.Serializable <|.. StockManagementSystem.StockFunctionality.Stock
+StockManagementSystem.Pages.MenuPageOptions <|-- StockManagementSystem.Runner
+@enduml

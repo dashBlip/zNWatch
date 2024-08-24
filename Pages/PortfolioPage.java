@@ -21,7 +21,7 @@ public class PortfolioPage {
         int counter = 1;
         while(resultSet.next()){
             Stock stock = stockFinder(resultSet.getString(2));
-            queue.insert( new Stock(resultSet.getString(2) , stock.currentPrice , resultSet.getDouble(3)));
+            queue.insert( new Stock(resultSet.getString(2) , stock.currentPrice , resultSet.getDouble(3), resultSet.getInt(4)));
         }
 
         queue.displayList();
@@ -37,7 +37,7 @@ public class PortfolioPage {
         int counter = 1;
         while(resultSet.next()){
             Stock stock = stockFinder(resultSet.getString(2));
-            binarySearchTree.insert( new Stock(resultSet.getString(2) , stock.currentPrice , resultSet.getDouble(3)));
+            binarySearchTree.insert( new Stock(resultSet.getString(2) , stock.currentPrice , resultSet.getDouble(3),resultSet.getInt(4)));
         }
 
         binarySearchTree.inOrderTraversal();

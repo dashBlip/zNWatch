@@ -10,11 +10,11 @@ public class Stock implements Serializable {
         priceSetter();
     }
 
-    public Stock(String name, double currentPrice, double purchasePrice) {
+    public Stock(String name, double currentPrice, double purchasePrice, int quantity) {
         this.name = name;
         this.currentPrice = currentPrice;
         this.purchasePrice = purchasePrice;
-        this.profit = currentPrice - purchasePrice;
+        this.profit = ( currentPrice * quantity ) - purchasePrice;
     }
 
     public StockEngine st = new StockEngine();
