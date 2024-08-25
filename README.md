@@ -3,6 +3,7 @@ You can add the link to your Doxygen-generated documentation by updating the "Ge
 ---
 
 # zNWatch 📈
+[Documentation](https://dashblip.github.io/zNWatch/) 📚
 
 **zNWatch** is a Java-based console application designed to simulate stock market operations. This application provides a range of features for managing and manipulating dummy stock data, including real-time stock value changes, JDBC integration for database operations, file input/output for data persistence, serialization to preserve application state between sessions, and a new admin feature for enhanced control.
 
