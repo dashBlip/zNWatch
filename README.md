@@ -1,5 +1,3 @@
-You can add the link to your Doxygen-generated documentation by updating the "Getting Started" section or any relevant section in your README file. Here’s how you might incorporate it into your existing documentation:
-
 ---
 
 # zNWatch 📈
