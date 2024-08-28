@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 18, 2024 at 10:01 AM
+-- Generation Time: Aug 27, 2024 at 05:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,12 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `AllDataView`
+-- (See below for the actual view)
+--
+CREATE TABLE `AllDataView` (
+`User_Username` varchar(15)
+,`User_FullName` varchar(20)
+,`User_DateOfBirth` varchar(12)
+,`User_PhoneNum` bigint(20)
+,`User_Email` varchar(20)
+,`User_PanNum` varchar(20)
+,`User_Balance` double
+,`Stock_StockName` varchar(20)
+,`Stock_StockPrice` double
+,`Stock_Quantity` int(11)
+,`Stock_PurchaseDate` varchar(20)
+,`Edit_OldPassword` varchar(20)
+,`Edit_NewPassword` varchar(20)
+,`Edit_OldEmail` varchar(20)
+,`Edit_NewEmail` varchar(20)
+,`Delete_Password` varchar(20)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Delete_Details`
 --
 
 CREATE TABLE `Delete_Details` (
   `Username` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL
+  `Password` varchar(20) NOT NULL DEFAULT '-'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -40,11 +65,23 @@ CREATE TABLE `Delete_Details` (
 
 CREATE TABLE `EditDetails` (
   `Username` varchar(20) NOT NULL,
-  `Old_Pass` varchar(20) NOT NULL,
-  `New_Pass` varchar(20) DEFAULT NULL,
-  `Old_E-mail` varchar(20) NOT NULL,
-  `New_E-mail` varchar(20) DEFAULT NULL
+  `Old_Pass` varchar(20) NOT NULL DEFAULT '-',
+  `New_Pass` varchar(20) DEFAULT '-',
+  `Old_E-mail` varchar(20) NOT NULL DEFAULT '-',
+  `New_E-mail` varchar(20) DEFAULT '-'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `EditDetails`
+--
+
+INSERT INTO `EditDetails` (`Username`, `Old_Pass`, `New_Pass`, `Old_E-mail`, `New_E-mail`) VALUES
+('', '0', '0', 'jj@gmail.com', 'jj@gmail.com'),
+('', '0', '0', 'jj@gmail.com', 'jj@gmail.com'),
+('', '0', '0', 'jj@gmail.com', 'jj@gmail.com'),
+('', '0', '0', 'jj@gmail.com', 'jj@gmail.com'),
+('', '0', '0', 'jj@gmail.com', 'jj@gmail.com'),
+('', '0', '0', 'jj@gmail.com', 'jj@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -59,6 +96,17 @@ CREATE TABLE `StockInfo` (
   `Quantity` int(11) NOT NULL,
   `PurchaseDate` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `StockInfo`
+--
+
+INSERT INTO `StockInfo` (`Username`, `StockName`, `StockPrice`, `Quantity`, `PurchaseDate`) VALUES
+('Kapil17', 'JioFinance', 716.7899412341144, 2, '2024-08-24'),
+('Kapil17', 'Suzlon', 273.42199425885974, 3, '2024-08-24'),
+('Kapil17', 'Wipro', 246.5837519791662, 1, '2024-08-24'),
+('kapil17', 'JioFinance', 357.51322013495775, 1, '2024-08-24'),
+('kapil17', 'MTNL', 60.59745185011691, 1, '2024-08-24');
 
 -- --------------------------------------------------------
 
@@ -78,6 +126,13 @@ CREATE TABLE `UserInfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `UserInfo`
+--
+
+INSERT INTO `UserInfo` (`FullName`, `DateOfBirth`, `PhoneNum`, `eMail`, `PanNum`, `Username`, `Password`, `Balance`) VALUES
+('Kapil Ramesh Surti', '17/04/2006', 9825771916, 'jj@gmail.com', 'PAN-kapil', 'Kapil17', '0', 18345.093640542782);
+
+--
 -- Triggers `UserInfo`
 --
 DELIMITER $$
@@ -92,6 +147,15 @@ CREATE TRIGGER `Edit_Store` AFTER UPDATE ON `UserInfo` FOR EACH ROW BEGIN
 END
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `AllDataView`
+--
+DROP TABLE IF EXISTS `AllDataView`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `AllDataView`  AS SELECT `u`.`Username` AS `User_Username`, `u`.`FullName` AS `User_FullName`, `u`.`DateOfBirth` AS `User_DateOfBirth`, `u`.`PhoneNum` AS `User_PhoneNum`, `u`.`eMail` AS `User_Email`, `u`.`PanNum` AS `User_PanNum`, `u`.`Balance` AS `User_Balance`, `s`.`StockName` AS `Stock_StockName`, `s`.`StockPrice` AS `Stock_StockPrice`, `s`.`Quantity` AS `Stock_Quantity`, `s`.`PurchaseDate` AS `Stock_PurchaseDate`, `e`.`Old_Pass` AS `Edit_OldPassword`, `e`.`New_Pass` AS `Edit_NewPassword`, `e`.`Old_E-mail` AS `Edit_OldEmail`, `e`.`New_E-mail` AS `Edit_NewEmail`, `d`.`Password` AS `Delete_Password` FROM (((`UserInfo` `u` left join `StockInfo` `s` on(`u`.`Username` = `s`.`Username`)) left join `EditDetails` `e` on(`u`.`Username` = `e`.`Username`)) left join `Delete_Details` `d` on(`u`.`Username` = `d`.`Username`)) ;
 
 --
 -- Indexes for dumped tables
